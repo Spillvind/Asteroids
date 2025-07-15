@@ -9,6 +9,15 @@ from player import Player
 def main():
 	pygame.init()
 
+	updateable = pygame.sprite.Group()
+	
+
+	drawable = pygame.sprite.Group()
+	
+
+	Player.containers = (drawable, updateable)
+
+
 	x = SCREEN_WIDTH / 2
 	y = SCREEN_HEIGHT / 2
 
