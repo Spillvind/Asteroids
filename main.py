@@ -9,13 +9,15 @@ from player import Player
 def main():
 	pygame.init()
 
-	updateable = pygame.sprite.Group()
+	updatable = pygame.sprite.Group()
 	
 
 	drawable = pygame.sprite.Group()
 	
 
-	Player.containers = (drawable, updateable)
+	Player.containers = (drawable, updatable)
+
+
 
 
 	x = SCREEN_WIDTH / 2
@@ -31,10 +33,13 @@ def main():
 			if event.type == pygame.QUIT:
 				return
 		screen.fill("black")
-		player.draw(screen)
+		
+		for drawables in drawable:
+			drawables.draw(screen)
+
+		updatable.update(dt)	
 		pygame.display.flip()
 		dt = clock.tick(60)/1000
-		player.update(dt)
 if __name__ == "__main__":
 		main()
 print(f"Screen width: {SCREEN_WIDTH}")
