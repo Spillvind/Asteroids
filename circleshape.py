@@ -15,6 +15,16 @@ class CircleShape(pygame.sprite.Sprite):
 
     def draw(self, screen):
         pygame.draw.polygon(screen, (255, 255, 255), self.triangle(), width = 2)
+    
+    def check_collision(self, CircleShape):
+
+        distance_vector = self.position - CircleShape.position
+        distance = self.position.distance_to(CircleShape.position)
+        minimal_distance = self.radius + CircleShape.radius
+        if distance <= minimal_distance:
+            return True
+        else:
+            return False
         
 
         
