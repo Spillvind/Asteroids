@@ -2,6 +2,7 @@
 # the open-source pygame library
 # throughout this file
 import pygame
+import sys
 
 from constants import *
 from player import Player
@@ -50,6 +51,10 @@ def main():
 		updatable.update(dt)	
 		pygame.display.flip()
 		dt = clock.tick(60)/1000
+
+		for asteroid in asteroids:
+			if player.check_collision(asteroid):
+				sys.exit("Game Over!")
 if __name__ == "__main__":
 		main()
 print(f"Screen width: {SCREEN_WIDTH}")
