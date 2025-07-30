@@ -1,6 +1,6 @@
 # this allows us to use code from
 # the open-source pygame library
-# throughout this file
+# throughout this file h
 import pygame
 import sys
 
@@ -8,16 +8,18 @@ from constants import *
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from shot import Shot
 
 def main():
 	pygame.init()
 
 	updatable = pygame.sprite.Group()
 	
-
 	drawable = pygame.sprite.Group()
 
 	asteroids = pygame.sprite.Group()
+
+	shots = pygame.sprite.Group()
 	
 
 	Player.containers = (drawable, updatable)
@@ -27,6 +29,8 @@ def main():
 	AsteroidField.containers = (updatable,)
 
 	asteroid_field = AsteroidField()
+
+	Shot.containers = (shots,updatable, drawable)
 
 
 
@@ -44,9 +48,11 @@ def main():
 			if event.type == pygame.QUIT:
 				return
 		screen.fill("black")
-		
+	
 		for drawables in drawable:
 			drawables.draw(screen)
+		for shot in shots:
+			shot.draw(screen)
 
 		updatable.update(dt)	
 		pygame.display.flip()
