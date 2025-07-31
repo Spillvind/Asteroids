@@ -56,3 +56,5 @@ class Player(CircleShape):
         velocity = direction * PLAYER_SHOT_SPEED
         shot.velocity = velocity
         return shot
+
+    timer = 
