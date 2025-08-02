@@ -3,6 +3,7 @@ from constants import PLAYER_TURN_SPEED
 from constants import PLAYER_SPEED
 from constants import SHOT_RADIUS
 from constants import PLAYER_SHOT_SPEED
+from constants import PLAYER_SHOOT_COOLDOWN
 from circleshape import CircleShape
 from shot import Shot
 import pygame
