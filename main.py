@@ -61,7 +61,7 @@ def main():
 		for asteroid in asteroids:
 			if player.check_collision(asteroid):
 				sys.exit("Game Over!")
-		for shot in shots
+		
 if __name__ == "__main__":
 		main()
 print(f"Screen width: {SCREEN_WIDTH}")

@@ -58,4 +58,7 @@ class Player(CircleShape):
         shot.velocity = velocity
         return shot
 
-    timer = PLAYER_SHOOT_COOLDOWN
+
+    timer = 0
+    if shoot:
+        timer = PLAYER_SHOOT_COOLDOWN
