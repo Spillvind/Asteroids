@@ -62,3 +62,4 @@ class Player(CircleShape):
     timer = 0
     if shoot:
         timer = PLAYER_SHOOT_COOLDOWN
+        shoot
