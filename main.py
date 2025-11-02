@@ -51,8 +51,6 @@ def main():
 	
 		for drawables in drawable:
 			drawables.draw(screen)
-		for shot in shots:
-			shot.draw(screen)
 
 		updatable.update(dt)	
 		pygame.display.flip()
