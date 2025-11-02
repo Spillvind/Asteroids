@@ -20,7 +20,7 @@ class CircleShape(pygame.sprite.Sprite):
 
         distance = self.position.distance_to(circleobject.position)
         minimal_distance = self.radius + circleobject.radius
-        return distance <= minimal_distance
+        return distance < minimal_distance
 
         
 

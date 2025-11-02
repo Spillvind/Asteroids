@@ -10,6 +10,7 @@ from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from shot import Shot
 
+
 def main():
 	pygame.init()
 
@@ -59,6 +60,13 @@ def main():
 		for asteroid in asteroids:
 			if player.check_collision(asteroid):
 				sys.exit("Game Over!")
+			for shot in shots:
+				if shot.check_collision(asteroid):
+					asteroid.kill()
+					shot.kill()
+					asteroid.split()
+
+
 		
 if __name__ == "__main__":
 		main()
